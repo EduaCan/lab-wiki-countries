@@ -7,14 +7,13 @@ import countriesJSON from './countries.json';
 import { useState, useEffect } from 'react';
 
 function App() {
-
   const [countries, setCountries] = useState(null);
   const [isFetching, setIsFetching] = useState(true);
 
-  useEffect(()=>{
-    setCountries(countriesJSON)
-    setIsFetching(false)
-  }, [])
+  useEffect(() => {
+    setCountries(countriesJSON);
+    setIsFetching(false);
+  }, []);
 
   if (isFetching === true) {
     return <h3>... buscando</h3>;
@@ -23,13 +22,12 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <div className="container">
-        <div className="row">
-            <CountriesList countries={countries}/> 
-          <Routes>
-            <Route path="/:id" element={<CountryDetails countries={countries}/>} />
-          </Routes>
-        </div>
+      <div style={{display: "flex"}}>
+
+      <CountriesList countries={countries} />
+      <Routes>
+        <Route path="/:id" element={<CountryDetails countries={countries} />} />
+      </Routes>
       </div>
     </div>
   );

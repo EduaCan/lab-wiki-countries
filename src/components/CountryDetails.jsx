@@ -30,6 +30,7 @@ function CountryDetails({ countries }) {
 
   return (
     <div className="col-7">
+      <img src={`https://flagpedia.net/data/flags/icon/72x54/${details.alpha2Code.toLowerCase()}.png`} alt="" width={100}/>
       <h1>{details.name.official}</h1>
       <table className="table">
         <thead></thead>
